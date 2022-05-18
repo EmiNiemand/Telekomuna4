@@ -9,7 +9,7 @@ def get_input_format():
           "(1) Int8\n",
           "(2) Int16\n",
           "(3) Int24\n",
-          "(4) Int32\n")
+          "(4) Int32")
     input_format = int(input(""))
     input_format = audio_input_formats[input_format - 1]
     return input_format
