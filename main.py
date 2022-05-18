@@ -16,7 +16,7 @@ def main():
 
 def get_input_format():
     audio_formats = [pyaudio.paInt8, pyaudio.paInt16, pyaudio.paInt24, pyaudio.paInt32]
-    print("Podaj format wejściowy: ",
+    print("Podaj format wejściowy: \n",
           "1.Int8\n",
           "2.Int16\n",
           "3.Int24\n",
@@ -31,6 +31,7 @@ def begin_transmission(port, ip, audio_setup: []):
     receiver_thread = threading.Thread(target=sr.receive, args=(audio_setup, port))
 
     receiver_thread.start()
+    input("Naciśnij dowolny klawisz, aby rozpocząć rozmowę")
     sender_thread.start()
 
 
