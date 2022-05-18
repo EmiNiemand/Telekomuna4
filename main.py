@@ -15,7 +15,7 @@ def get_input_format():
     return input_format
 
 
-def begin_transmission(port, ip, audio_setup: [int, int, int, int]):
+def begin_transmission(port, ip, audio_setup: []):
     sender_thread = threading.Thread(target=sr.send, args=(audio_setup, (ip, port)))
     receiver_thread = threading.Thread(target=sr.receive, args=(audio_setup, port))
 
