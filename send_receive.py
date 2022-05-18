@@ -1,7 +1,7 @@
 import socket
 import pyaudio
 
-def send(audio_setup: [int, int, int, int], ip_port: [str, int]):
+def send(audio_setup: [], ip_port: []):
     p = pyaudio.PyAudio()
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
@@ -20,7 +20,7 @@ def send(audio_setup: [int, int, int, int], ip_port: [str, int]):
             p.terminate()
 
 
-def receive(audio_setup: [int, int, int, int], port):
+def receive(audio_setup: [], port):
     p = pyaudio.PyAudio()
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
