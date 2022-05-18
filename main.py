@@ -29,10 +29,12 @@ def get_input_format():
 def begin_transmission(port, ip, audio_setup: []):
     sender_thread = threading.Thread(target=sr.send, args=(audio_setup, (ip, port)))
     receiver_thread = threading.Thread(target=sr.receive, args=(audio_setup, port))
-
-    receiver_thread.start()
-    input("Naciśnij dowolny klawisz, aby rozpocząć rozmowę")
-    sender_thread.start()
+    try:
+        receiver_thread.start()
+        input("Naciśnij dowolny klawisz, aby rozpocząć rozmowę")
+        sender_thread.start()
+    except KeyboardInterrupt:
+        input("Przerwano połączenie. Naciśnij dowolny klawisz, by kontynuować...")
 
 
 if __name__ == '__main__':
