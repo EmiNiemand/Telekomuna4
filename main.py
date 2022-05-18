@@ -22,18 +22,18 @@ def begin_transmission(port, ip, audio_setup: []):
     try:
         print("[Ctrl+C by przerwać]")
         receiver_thread.start()
-        input("Naciśnij enter aby rozpocząć połączenie")
+        input("Naciśnij dowolny przycisk aby rozpocząć rozmowę")
         sender_thread.start()
     except KeyboardInterrupt:
-        input("Przerwano połączenie. Naciśnij dowolny klawisz, by kontynuować...")
+        input("Przerwano połączenie.")
 
 
 def main():
     port = int(input("Podaj numer portu: "))
     ip = str(input("Podaj ip: "))
-    chunk = int(input("Podaj rozdzielczonść: "))
+    chunk = int(input("Podaj rozdzielczość: "))
     input_format = get_input_format()
-    channel_number = int(input("Podaj liczbe kanałów: "))
+    channel_number = int(input("Podaj liczbę kanałów: "))
     rate = int(input("Podaj próbkowanie: "))
     audio_setup = (chunk, input_format, channel_number, rate)
     input("Naciśnij dowolny klawisz, aby rozpocząć")
