@@ -6,7 +6,7 @@ import threading
 
 def main():
     port = 2137
-    ip = "192.168.0.18"
+    ip = "192.168.194.109"
     audio_setup = (1024, pyaudio.paInt16, 2, 44100)
     user_choice = ''
     while user_choice != '4':
@@ -18,7 +18,7 @@ def main():
               "(2) Podaj parametry przesyłu (port i adres hosta)\n",
               "(3) Rozpocznij połączenie\n",
               "(4) Wyjdź z programu\n")
-        user_choice = input("> ")
+        user_choice = int(input("> "))
         if user_choice == 0:
             audio_setup = get_audio_parameters()
             ip, port = get_transmission_parameters()
