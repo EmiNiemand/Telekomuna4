@@ -33,7 +33,7 @@ def begin_transmission(port, ip, audio_setup: [int, int, int, int]):
     try:
         print("[Ctrl+C by przerwać]")
         receiver_thread.start()
-        input("Naciśnij dowolny klawisz, aby rozpocząć połączenie")
+        input("Naciśnij enter aby rozpocząć połączenie")
         sender_thread.start()
     except KeyboardInterrupt:
         input("Przerwano połączenie. Naciśnij dowolny klawisz, by kontynuować...")
