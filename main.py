@@ -31,11 +31,12 @@ def begin_transmission(port, ip, audio_setup: []):
 def main():
     port = int(input("Podaj numer portu: "))
     ip = str(input("Podaj ip: "))
-    chunk = int(input("Podaj rozdzielczość: "))
-    input_format = get_input_format()
-    channel_number = int(input("Podaj liczbę kanałów: "))
-    rate = int(input("Podaj próbkowanie: "))
-    audio_setup = (chunk, input_format, channel_number, rate)
+    audio_setup = (1024, pyaudio.paInt16, 2, 44100)
+    # chunk = int(input("Podaj rozdzielczość: "))
+    # input_format = get_input_format()
+    # channel_number = int(input("Podaj liczbę kanałów: "))
+    # rate = int(input("Podaj próbkowanie: "))
+    # audio_setup = (chunk, input_format, channel_number, rate)
     input("Naciśnij dowolny klawisz, aby rozpocząć")
     begin_transmission(port, ip, audio_setup)
 
